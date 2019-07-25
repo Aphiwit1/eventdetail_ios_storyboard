@@ -8,12 +8,51 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    @IBOutlet weak var mDeleteButton: UIButton!
+    
+    @IBOutlet weak var mUIView1: UIView!
+    @IBOutlet weak var mUIView2: UIView!
+    @IBOutlet weak var mUIView3: UIView!
+    
+    @IBOutlet weak var mLabelDescription: UILabel!
+    
+    var data = ["girl","girl","girl","girl","girl"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        mUIView1.layer.cornerRadius = 8
+        mUIView2.layer.cornerRadius = 8
+        mUIView3.layer.cornerRadius = 8
+
+        mDeleteButton.layer.borderColor = UIColor.red.cgColor
+        mDeleteButton.layer.borderWidth = 2
+        mDeleteButton.layer.cornerRadius = 8
+        
+        
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reuseCell", for: indexPath) as! showCollectionViewCell
+        
+//        let text = cell.mLabel.text
+//        cell.mLabel.text = "\(data[0])"
+        cell.mImageView.image = UIImage(named: data[indexPath.item])
+        
+        return cell
+    }
+    
+   
+    
+    
+    
 
 
 }
