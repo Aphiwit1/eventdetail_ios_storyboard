@@ -21,6 +21,7 @@ class Page2ViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     @IBOutlet weak var mDayMMYY: UILabel!
     @IBOutlet weak var mTime: UILabel!
+    @IBOutlet weak var mLocation: UILabel!
     
     var data = ["girl","girl","girl","girl","girl"]
     
@@ -81,22 +82,30 @@ class Page2ViewController: UIViewController, UICollectionViewDelegate, UICollect
                         let decoder = JSONDecoder()
                         let result = try decoder.decode(ResponseDetail.self, from: response.data!)
                         var eventDetail = result.data
-                        self.mLabelDescription.text = eventDetail.apDescription
-                        
                         
                         var startDate = self.epochToDate(eventDetail.apStartTime)
                         var endDate = self.epochToDate(eventDetail.apEndTime)
                         
                         var strtime=startDate.description.components(separatedBy: " ")[1].components(separatedBy: ":")
-                        self.mTime.text = strtime[0]+":"+strtime[1]
+                        
+                        var dateEvent = startDate.description.components(separatedBy: " ")[0].components(separatedBy: ":")
+                        
+                       
+                        self.mDayMMYY.text = "\(dateEvent)"
+                        
+                        self.mTime.text = "From "+strtime[0]+":"+strtime[1]
+                        
+                        self.mLabelDescription.text = eventDetail.apDescription
+                        
+                        self.mLocation.text = eventDetail.apLocation
+                        
+                        print("end time ---->", endDate)
 
 
                         print(eventDetail.apDescription)
                     } catch {
                         print("catch")
                     }
-                    
-       
                     
                     break
                 case let .failure(error):

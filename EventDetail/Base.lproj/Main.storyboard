@@ -445,6 +445,7 @@
                         <outlet property="mDayMMYY" destination="P6T-6O-LpF" id="be6-kz-NgG"/>
                         <outlet property="mDeleteButton" destination="kiS-tJ-Hcm" id="OQS-Xv-ILV"/>
                         <outlet property="mLabelDescription" destination="1gN-9F-YrS" id="3e1-QB-g82"/>
+                        <outlet property="mLocation" destination="UDh-z4-l8W" id="1O9-bI-0sr"/>
                         <outlet property="mTime" destination="PsR-RX-orU" id="AMT-uC-XEA"/>
                         <outlet property="mUIView1" destination="w9a-Uz-IhJ" id="pYv-Fx-VTO"/>
                         <outlet property="mUIView2" destination="xFr-eZ-56P" id="wLW-57-962"/>
