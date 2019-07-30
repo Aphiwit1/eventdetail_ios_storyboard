@@ -13,6 +13,7 @@
 		CB789DC522ED60E300971F21 /* Page2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB789DC422ED60E300971F21 /* Page2CollectionViewCell.swift */; };
 		CB789DC722ED95DD00971F21 /* ConfirmAlertDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB789DC622ED95DD00971F21 /* ConfirmAlertDelegate.swift */; };
 		CB789DC922ED95E700971F21 /* ConfirmAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB789DC822ED95E700971F21 /* ConfirmAlertViewController.swift */; };
+		CB8F018022F0482000649CB9 /* ResponseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8F017F22F0482000649CB9 /* ResponseDetail.swift */; };
 		CB97BB1722E6077A0070ABCC /* images-2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CB97BB1622E6077A0070ABCC /* images-2.jpeg */; };
 		CBB8463922E5C7E700D04DA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8463822E5C7E700D04DA2 /* AppDelegate.swift */; };
 		CBB8463B22E5C7E700D04DA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8463A22E5C7E700D04DA2 /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 		CB789DC422ED60E300971F21 /* Page2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2CollectionViewCell.swift; sourceTree = "<group>"; };
 		CB789DC622ED95DD00971F21 /* ConfirmAlertDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmAlertDelegate.swift; sourceTree = "<group>"; };
 		CB789DC822ED95E700971F21 /* ConfirmAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmAlertViewController.swift; sourceTree = "<group>"; };
+		CB8F017F22F0482000649CB9 /* ResponseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDetail.swift; sourceTree = "<group>"; };
 		CB97BB1622E6077A0070ABCC /* images-2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "images-2.jpeg"; sourceTree = "<group>"; };
 		CBB8463522E5C7E700D04DA2 /* EventDetail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventDetail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB8463822E5C7E700D04DA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				CB789DC422ED60E300971F21 /* Page2CollectionViewCell.swift */,
 				CB789DC822ED95E700971F21 /* ConfirmAlertViewController.swift */,
 				CB789DC622ED95DD00971F21 /* ConfirmAlertDelegate.swift */,
+				CB8F017F22F0482000649CB9 /* ResponseDetail.swift */,
 			);
 			path = EventDetail;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB789DC722ED95DD00971F21 /* ConfirmAlertDelegate.swift in Sources */,
+				CB8F018022F0482000649CB9 /* ResponseDetail.swift in Sources */,
 				CBB8463B22E5C7E700D04DA2 /* ViewController.swift in Sources */,
 				CB789DC922ED95E700971F21 /* ConfirmAlertViewController.swift in Sources */,
 				CBB8463922E5C7E700D04DA2 /* AppDelegate.swift in Sources */,

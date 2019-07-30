@@ -46,4 +46,6 @@ class ConfirmAlertView: UIViewController {
         delegate?.deleteButtonTapped()
         dismiss(animated: true, completion: nil)
     }
+    
+    
 }

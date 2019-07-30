@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class Page2ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -18,10 +19,14 @@ class Page2ViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     @IBOutlet weak var mLabelDescription: UILabel!
     
+    @IBOutlet weak var mDayMMYY: UILabel!
+    @IBOutlet weak var mTime: UILabel!
+    
     var data = ["girl","girl","girl","girl","girl"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        feedData()
         
         mUIView1.layer.cornerRadius = 8
         mUIView2.layer.cornerRadius = 8
@@ -30,6 +35,8 @@ class Page2ViewController: UIViewController, UICollectionViewDelegate, UICollect
         mDeleteButton.layer.borderColor = UIColor.red.cgColor
         mDeleteButton.layer.borderWidth = 2
         mDeleteButton.layer.cornerRadius = 8
+        
+        
         
         
     }
@@ -51,5 +58,61 @@ class Page2ViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         return cell
     }
+    
+    @IBAction func confirmDeleteEvent() {
+        let alert = UIAlertController(title: "Confirm Delete", message: "Do you want to delete this event?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
+    
+    func feedData(){
+                let url = "http://localhost:8000/api/appointments/1"
+   
+        print("Feed")
+        AF.request(url, method: .get, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    do {
+                        let decoder = JSONDecoder()
+                        let result = try decoder.decode(ResponseDetail.self, from: response.data!)
+                        var eventDetail = result.data
+                        self.mLabelDescription.text = eventDetail.apDescription
+                        
+                        
+                        var startDate = self.epochToDate(eventDetail.apStartTime)
+                        var endDate = self.epochToDate(eventDetail.apEndTime)
+                        
+                        var strtime=startDate.description.components(separatedBy: " ")[1].components(separatedBy: ":")
+                        self.mTime.text = strtime[0]+":"+strtime[1]
+
+
+                        print(eventDetail.apDescription)
+                    } catch {
+                        print("catch")
+                    }
+                    
+       
+                    
+                    break
+                case let .failure(error):
+                    print(error)
+                    break
+                }
+                
+        }
+        print("End Feed")
+    }
+    
+    
+    func epochToDate(_ epoch:Int) -> NSDate {
+        let date = NSDate(timeIntervalSince1970: (60*60*7)+Double(epoch) ) as Date
+        return date as NSDate
+    }
+    
     
 }
